@@ -25,6 +25,7 @@ h1, h2 {
     border-radius: 10px;
     font-size: 20px;
     margin: auto;   
+    margin-bottom: 80px;
 }
 
 
@@ -52,18 +53,21 @@ h1, h2 {
 }
 
 .output-box {
-    width: 450px;
-    height: 90px;
+    height: 120px;
+    width: 645px;
+    display: flex;
+    justify-content: center;
     border-radius: 10px;
-    margin: 80px;
+    margin: auto;
     background-color: #ffffff;
+    align-items: center;
 }
 .hidden {
     display: none;
 }
 
 img {
- width: 50%;
+ width: 80px;
  height: 80%;
 }
 

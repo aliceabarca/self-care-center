@@ -9,29 +9,67 @@ var messageDisplay = document.querySelector('section')
 
 //event listener
 receiveMessageButton.addEventListener('click', receiveMessage)
-affirmationMessage.addEventListener('click', affirmationMsg)
-mantrasMessage.addEventListener('click', mantraMsg)
+// affirmationMessage.addEventListener('click', affirmationMsg)
+// mantrasMessage.addEventListener('click', mantraMsg)
 
 
 // functions
 
 function receiveMessage() {
     meditateImg.classList.add('hidden')
-    
-    console.log('hello')
+    var isMantraChecked = mantrasMessage.checked
+    var isAffirmationChecked = affirmationMessage.checked
+    var messageOutput;
+    // is there to reassign later 
+    if (isMantraChecked) {
+        // assign message output to mantra message
+       messageOutput = mantraMsg()
+       outputBox.innerHTML = `
+       <p>${messageOutput}</p>
+       `;
+    } else if(isAffirmationChecked){
+        // assign message out to affirmation message 
+        messageOutput = affirmationMsg()
+        outputBox.innerHTML = `
+        <p>${messageOutput}</p>
+        `
+    } else {
+
+    }
+// console.log(outputBox)
+    // display message output in output box
+
+
+
+    // console.log('hello', mantrasMessage.checked)
+    // console.log('alice', affirmationMessage.checked)
 }
 
 
 function affirmationMsg() {
-    console.log('hey')
+    var randomNum = Math.floor(Math.random() * affirmationMessages.length)
+    // console.log('hey')
+    var affirmation = affirmationMessages[randomNum]
+// return message
+    return affirmation
 }
+
+
 
 function mantraMsg() {
-    console.log('hola')
+    // Give me a random number based on the length of the mantrasMessage
+      // let's say it's 10, give me a radom number between 0 and 9
+      // => 3
+    var randomNum = Math.floor(Math.random() * mantrasMessages.length)
+    // Using the mantrasMessages, give me the message at index randomNumber
+      // => 
+    // mantrasMessages[3]
+    var mantra = mantrasMessages[randomNum]
+
+    return mantra
+    // return message
 }
 
-var randomMantraMsg = Math.floor(Math.random() * affirmationMessages.length)
-var randomAffirmationMsg = Math.floor(Math.random() * mantrasMessages.length)
 
 var affirmationMessages = [`I forgive myself and set myself free`,
 `I believe I can be all that I want to be.`, `I am in the process of becoming the best version of myself.`, `I have the freedom & power to create the life I desire.`,
