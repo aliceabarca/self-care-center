@@ -59,6 +59,14 @@ h2 {
     width: 180px;
 }
 
+.clear-button {
+    margin: 40px;
+    border-radius: 100px;
+    font-style: italic;
+    background-color:#134d71;
+    color: white;  
+}
+
 .output-box {
     height: 140px;
     width: 800px;

@@ -6,11 +6,13 @@ var mantrasMessage = document.querySelector('#mantra')
 var outputBox = document.querySelector('.output-box')
 var meditateImg = document.querySelector('.meditate-img')
 var messageDisplay = document.querySelector('section')
+var clearMessage = document.querySelector('.clear-button')
 
 //event listener
 receiveMessageButton.addEventListener('click', receiveMessage)
 // affirmationMessage.addEventListener('click', affirmationMsg)
 // mantrasMessage.addEventListener('click', mantraMsg)
+clearMessage.addEventListener('click', clearMessage)
 
 
 // functions
@@ -47,6 +49,11 @@ function receiveMessage() {
     // console.log('alice', affirmationMessage.checked)
 }
 
+
+
+function clearMessage() {
+    
+}
 
 function affirmationMsg() {
     var randomNum = Math.floor(Math.random() * affirmationMessages.length)
