@@ -33,9 +33,11 @@ function receiveMessage() {
         outputBox.innerHTML = `
         <p>${messageOutput}</p>
         `
-    } else {
-
+    } else if(!isMantraChecked || !isAffirmationChecked) {
+        meditateImg.classList.remove('hidden')
+        return alert('Select A Message Option')
     }
+        
 // console.log(outputBox)
     // display message output in output box
 
