@@ -6,14 +6,13 @@ var mantrasMessage = document.querySelector('#mantra')
 var outputBox = document.querySelector('.output-box')
 var meditateImg = document.querySelector('.meditate-img')
 var messageDisplay = document.querySelector('section')
-var clearMessage = document.querySelector('.clear-button')
+var clearButton = document.querySelector('.clear-message')
+var clearMsgButton = document.querySelector('.clear-button')
+var messageOutput;
 
 //event listener
 receiveMessageButton.addEventListener('click', receiveMessage)
-// affirmationMessage.addEventListener('click', affirmationMsg)
-// mantrasMessage.addEventListener('click', mantraMsg)
-clearMessage.addEventListener('click', clearMessage)
-
+clearMsgButton.addEventListener('click', clearMsg)
 
 // functions
 
@@ -21,7 +20,6 @@ function receiveMessage() {
     meditateImg.classList.add('hidden')
     var isMantraChecked = mantrasMessage.checked
     var isAffirmationChecked = affirmationMessage.checked
-    var messageOutput;
     // is there to reassign later 
     if (isMantraChecked) {
         // assign message output to mantra message
@@ -29,30 +27,27 @@ function receiveMessage() {
        outputBox.innerHTML = `
        <p>${messageOutput}</p>
        `;
+       clearMsgButton.classList.remove('hidden')
     } else if(isAffirmationChecked){
         // assign message out to affirmation message 
         messageOutput = affirmationMsg()
         outputBox.innerHTML = `
         <p>${messageOutput}</p>
         `
+        clearMsgButton.classList.remove('hidden')
     } else if(!isMantraChecked || !isAffirmationChecked) {
         meditateImg.classList.remove('hidden')
         return alert('Select A Message Option')
-    }
-        
+    }        
 // console.log(outputBox)
     // display message output in output box
-
-
-
-    // console.log('hello', mantrasMessage.checked)
-    // console.log('alice', affirmationMessage.checked)
 }
 
-
-
-function clearMessage() {
-    
+// have clear button to appear when message appears
+// when the button is clicked the medidate image should reappear
+// button needs to dissapear when image reappears
+function clearMsg() {
+    location.reload()
 }
 
 function affirmationMsg() {
