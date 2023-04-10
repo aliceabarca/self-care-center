@@ -8,24 +8,29 @@ body {
     background-attachment: fixed;
 }
 
-h1, h2 {
+h1 {
     color: #ffffff;
     margin-top: 40px;
 }
-
+h2 {
+    color: #ffffff;
+    margin-top: 80px;
+    margin-bottom: px;
+    
+}
 #message-box {
     background-color: #ffffff;
     border-style: solid;
 }
 
 .input-box {
-    width: 450px;
-    height: 80px;
+    width: 550px;
+    height: 90px;
     background: #ffffff;
     border-radius: 10px;
     font-size: 20px;
     margin: auto;   
-    margin-bottom: 80px;
+    margin-bottom: 140px;
 }
 
 
@@ -46,15 +51,25 @@ h1, h2 {
 }
 
 .receive-message-button {
-    margin: 20px;
+    margin: 30px;
     color: #ffffff;
     background-color:#134d71;
     border-radius: 5px;
+    height: 25px;
+    width: 180px;
+}
+
+.clear-button {
+    margin: 40px;
+    border-radius: 100px;
+    font-style: italic;
+    background-color:#134d71;
+    color: white;  
 }
 
 .output-box {
-    height: 120px;
-    width: 645px;
+    height: 140px;
+    width: 800px;
     display: flex;
     justify-content: center;
     border-radius: 10px;
